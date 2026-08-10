@@ -24,7 +24,7 @@ resource "aws_vpc" "test-vpc-nv" {
   provider   = aws.nv
 
   tags = {
-    Name = terraform-vpc-${count.index+1}
+    Name = "terraform-vpc-${count.index}"
   }
 }
 
@@ -34,6 +34,6 @@ resource "aws_vpc" "test-vpc-sing" {
   provider = aws.sing
 
 tags = {
-  Name = "terraform-vpc-${count.index+1}"
+  Name = "terraform-vpc-${count.index}"
 }
 }
