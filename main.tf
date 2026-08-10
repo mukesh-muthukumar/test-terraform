@@ -14,17 +14,17 @@ provider "aws" {
 }
 
 provider "aws" {
-  region = "ap-south-1"
-  alias  = "mumbai"
+  region = "ap-southeast-1"
+  alias  = "sing"
 }
 
-resource "aws_vpc" "test-vpc" {
+resource "aws_vpc" "test-vpc-nv" {
   cidr_block = "10.0.0.0/16"
   provider   = aws.nv
 }
 
-resource "aws_vpc" "test-vpc-mumbai" {
+resource "aws_vpc" "test-vpc-sing" {
   cidr_block = "10.0.0.0/16"
-  provider   = aws.mumbai
+  provider = aws.sing
 }
 
