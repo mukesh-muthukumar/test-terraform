@@ -20,11 +20,20 @@ provider "aws" {
 
 resource "aws_vpc" "test-vpc-nv" {
   cidr_block = "10.0.0.0/16"
+  count = 3
   provider   = aws.nv
+
+  tags = {
+    Name = terraform-vpc-${count.index+1}
+  }
 }
 
 resource "aws_vpc" "test-vpc-sing" {
   cidr_block = "10.0.0.0/16"
+  count = 3
   provider = aws.sing
-}
 
+tags = {
+  Name = "terraform-vpc-${count.index+1}"
+}
+}
