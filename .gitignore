@@ -1,3 +1,4 @@
 .terraform/
 .terraform.lock.hcl
-test.html
+aws
+awscliv2.zip
