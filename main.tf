@@ -14,7 +14,8 @@ provider "aws" {
 }
 
 resource "aws_instance" "test-terraform" {  
-  ami           = "ami-0c55b159cbfafe1f0"
+  ami           = "ami-0227b667694b00c72"
+  instance_type = each.value
   provider = aws.nv
   for_each = {
     dev = "t2.micro"
