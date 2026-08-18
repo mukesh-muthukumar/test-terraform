@@ -13,17 +13,12 @@ provider "aws" {
   alias  = "nv"
 }
 
-resource "aws_instance" "test-terraform" {  
-  ami           = "ami-0227b667694b00c72"
-  instance_type = each.value
+resource "aws_vpc" "nv_vpc" {
   provider = aws.nv
-  for_each = {
-    dev = "t2.micro"
-    prod = "t2.large"
+  cidr_block = "10.0.0.0/16"
+  tags = {
+    Name = "nv_vpc"
   }
-
-tags = {
-  Name = "terraform-vpc-$each.key-${each.value}"
-}
-}
-
+  lifecycle {
+    create_before_destroy = true
+  }
