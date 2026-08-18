@@ -20,6 +20,8 @@ resource "aws_vpc" "nv_vpc" {
     Name = "nv_vpc"
   }
   lifecycle {
-   prevent_destroy = false
+   ignore_changes = [
+      tags,
+    ]
   }
 }
