@@ -14,7 +14,7 @@
   }
 
   resource "aws_instance" "example" {
-    ami           = "ami-0c55b159cbfafe1f0"
+    ami           = "ami-00e42372e0f0bcdaf"
     instance_type = "var.instance_type"
     provider      = aws.nv
   }
