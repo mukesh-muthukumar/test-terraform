@@ -1,4 +1,6 @@
   locals {
+    Name = "example-instance-${local.provider_name}"
+    provider_name = "aws.nv"
     instance_type = var.instance_type
   }
 
