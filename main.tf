@@ -18,4 +18,8 @@
     instance_type = var.instance_type
     subnet_id     = "subnet-0cc8a8de044439081"
     provider      = aws.nv
+
+    tags = {
+      Name = "example-instance"
+    }
   }
